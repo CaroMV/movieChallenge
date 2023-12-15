@@ -1,0 +1,19 @@
+
+.header {
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    background: linear-gradient(180deg, #0596F0 0%, #8F1BC0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .title {
+    margin: 0;
+  }
+  
