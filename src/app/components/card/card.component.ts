@@ -12,6 +12,6 @@ import { Movie } from '../../interfaces/interfaces';
 export class CardComponent {
   @Input() backgroundImg!: string | null;
   @Input() title!: string;
-  @Input() year!: number;
+  @Input() year!: string;
   backgroundUrl!: string;
 }

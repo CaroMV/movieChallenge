@@ -9,6 +9,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { OptionsComponent } from './components/options/options.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailsComponent } from './components/details/details.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailsComponent } from './components/details/details.component';
     PaginationComponent,
     OptionsComponent,
     CardComponent,
-    DetailsComponent
+    DetailsComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
