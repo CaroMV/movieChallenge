@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { MovieConsultService } from '../movie-consult.service';
-import { Movie } from '../interfaces/interfaces';
+import { MovieConsultService } from '../../movie-consult.service';
+import { Movie } from '../../interfaces/interfaces';
 
 
 @Component({
