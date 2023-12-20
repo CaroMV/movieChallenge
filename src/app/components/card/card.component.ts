@@ -1,7 +1,6 @@
 // movie-card.component.ts
 
 import { Component, Input , OnInit} from '@angular/core';
-import { Movie } from '../../interfaces/interfaces'; 
 
 @Component({
   selector: 'app-card',
@@ -15,7 +14,7 @@ export class CardComponent {
   @Input() year: string | undefined;
 
   get backgroundUrl(): string {
-    const baseUrl = 'https://image.tmdb.org/t/p/w500'; // Puedes ajustar el tamaño según tus necesidades
+    const baseUrl = 'https://image.tmdb.org/t/p/w500'; 
     return this.backdropPath ? `${baseUrl}/${this.backdropPath}` : '';
   }
 }
