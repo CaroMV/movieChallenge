@@ -10,6 +10,9 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { OptionsComponent } from './components/options/options.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { PaginationComponent } from './components/pagination/pagination.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatPaginatorModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
