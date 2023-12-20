@@ -10,7 +10,7 @@ import { Movie } from '../../interfaces/interfaces';
 })
 
 export class MovieListComponent implements OnInit {
-  movies: Movie[] | undefined;
+  movies: Movie[] = [];
   constructor(private readonly movieService: MovieConsultService) {}
 
   ngOnInit(): void {
@@ -18,10 +18,17 @@ export class MovieListComponent implements OnInit {
   }
 
   loadMovies(): void {
-    this.movieService.getMovies(1).subscribe((res) => {
-      this.movies = res;
-    });
+    this.movieService.getMovies(1).subscribe(
+      (res) => {
+        console.log(res); // Verifica qué está devolviendo la API
+        this.movies = res;
+      },
+      (error) => {
+        console.error(error); // Muestra cualquier error en la consola
+      }
+    );
   }
+  
   getReleaseYear(releaseDate: string): string {
     return releaseDate ? new Date(releaseDate).getFullYear().toString() : '';
   }

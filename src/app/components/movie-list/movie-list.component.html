@@ -1,11 +1,6 @@
 <app-header></app-header>
-
-<app-pagination></app-pagination>
-
-<div *ngIf="movies">
-  <app-card *ngFor="let movie of movies"
-            [backgroundImg]="movie.poster_path"
-            [title]="movie.title"
-            [year]="getReleaseYear(movie.release_date)">
+<div class="movie-list">
+  <app-card *ngFor="let movie of movies" [backdropPath]="movie.backdrop_path" [title]="movie.title" [year]="getReleaseYear(movie.release_date)">
   </app-card>
 </div>
+<app-pagination></app-pagination>

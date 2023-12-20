@@ -1,6 +1,7 @@
-
-<figure class="card" [ngStyle]="{'background': backgroundUrl}">
-    <figcaption class="ribbon">{{ year }}</figcaption>
-    <figcaption class="title">{{ title }}</figcaption>
-  </figure>
-  
+<div class="card">
+  <div class="card-content">
+    <h3>{{ title }}</h3>
+    <p>{{ year }}</p>
+  </div>
+  <img [src]="backgroundUrl" alt="{{ title }} Poster">
+</div>

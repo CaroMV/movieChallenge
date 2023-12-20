@@ -10,8 +10,12 @@ import { Movie } from '../../interfaces/interfaces';
 })
 
 export class CardComponent {
-  @Input() backgroundImg!: string | null;
-  @Input() title!: string;
-  @Input() year!: string;
-  backgroundUrl!: string;
+  @Input() backdropPath: string | null = '';
+  @Input() title: string | undefined;
+  @Input() year: string | undefined;
+
+  get backgroundUrl(): string {
+    const baseUrl = 'https://image.tmdb.org/t/p/w500'; // Puedes ajustar el tamaño según tus necesidades
+    return this.backdropPath ? `${baseUrl}/${this.backdropPath}` : '';
+  }
 }

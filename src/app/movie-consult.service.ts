@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { GenresList, Movie } from './interfaces/interfaces';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,11 @@ export class MovieConsultService {
 
   getMovies(page: number): Observable<Movie[]> {
     const params = new HttpParams().set('api_key', this.api_key).set('page', page.toString());
-
-    return this.http.get<Movie[]>(`${this.urlAPI}/discover/movie`, { params });
+  
+    return this.http.get<any>(`${this.urlAPI}/discover/movie`, { params })
+      .pipe(map((response: any) => response.results || []));
   }
+  
 
   getMovieDetails(movieid: number) : Observable<Movie> {
     return this.http.get<Movie>(`${this.urlAPI}/movie/${movieid}?api_key=${this.api_key}`);
@@ -26,6 +29,7 @@ export class MovieConsultService {
   getAllGenres(): Observable<GenresList> {
     return this.http.get<GenresList>(`${this.urlAPI}/genre/movie/list?api_key=${this.api_key}`)
   }
+
   getGenreFilter(page: number, genreId: string, selectedSort: string): Observable<any> {
     const params = new HttpParams({
       fromObject: {
