@@ -1,15 +1,15 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
-import { HeaderComponent } from './components/header/header.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
-import { OptionsComponent } from './components/options/options.component';
 import { CardComponent } from './components/card/card.component';
 import { DetailsComponent } from './components/details/details.component';
+import { HeaderComponent } from './components/header/header.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { OptionsComponent } from './components/options/options.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
