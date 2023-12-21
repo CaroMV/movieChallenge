@@ -11,6 +11,11 @@ import { Movie } from '../../interfaces/interfaces';
 
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
+  // Como estoy teniendo problemas para implementar la paginación, vamos a comentar
+  // Primero debo generar una propiedad para gestionar la paginación
+  currentPage = 1; // acá vamos a almacenar la pagina actual
+  totalPages = 0 //
+
   constructor(private readonly movieService: MovieConsultService) {}
 
   ngOnInit(): void {
@@ -18,15 +23,22 @@ export class MovieListComponent implements OnInit {
   }
 
   loadMovies(): void {
-    this.movieService.getMovies(1).subscribe(
+    this.movieService.getMovies(this.currentPage).subscribe(
       (res) => {
-        console.log('Respuesta cargada por loadMovies(): ',res); // Verificar qué está devolviendo la API
-        this.movies = res;
+        console.log('Respuesta cargada por loadMovies(): ', res);
+        this.movies = res.movies;
+        this.totalPages = res.total_pages;
       },
       (error) => {
-        console.error(error); //para mostrar error en caso de cualquier cosa
+        console.error(error);
       }
     );
+  }
+  
+
+  onPageChange(page: number): void {
+    this.currentPage = page;
+    this.loadMovies();
   }
   
   getReleaseYear(releaseDate: string): string {

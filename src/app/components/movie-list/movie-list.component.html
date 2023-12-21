@@ -3,5 +3,5 @@
 <section class="movie-list">
   <app-card *ngFor="let movie of movies" [backdropPath]="movie.backdrop_path" [title]="movie.title" [year]="getReleaseYear(movie.release_date)">
   </app-card>
-  <app-pagination></app-pagination>
+  <app-pagination [numOfPages]="totalPages" (newPageEvent)="onPageChange($event)"></app-pagination>
 </section>

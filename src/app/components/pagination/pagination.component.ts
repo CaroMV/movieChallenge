@@ -25,10 +25,10 @@ export class PaginationComponent implements OnInit, OnDestroy {
   ngOnChanges(changes: SimpleChanges): void {
     
   }
-
+ // emitir eventos con el n° de página 
   onPageChanged(event: PageEvent): void {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
-    this.newPageEvent.emit(this.pageIndex + 1); 
+    this.newPageEvent.emit(this.pageIndex + 1);
   }
 }

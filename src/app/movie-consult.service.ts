@@ -16,9 +16,11 @@ export class MovieConsultService {
 
   getMovies(page: number): Observable<any> {
     const params = new HttpParams().set('api_key', this.api_key).set('page', page.toString());
-  
+    
     return this.http.get<any>(`${this.urlAPI}/discover/movie`, { params })
-      .pipe(map((response: any) => response.results || []));
+      .pipe(map((response: any) => {
+        return { movies: response.results || [], total_pages: response.total_pages };
+      }));
   }
   
 
