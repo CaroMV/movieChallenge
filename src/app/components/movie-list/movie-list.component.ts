@@ -15,7 +15,7 @@ export class MovieListComponent implements OnInit {
   // Primero debo generar una propiedad para gestionar la paginación
   currentPage = 1; // acá vamos a almacenar la pagina actual
   totalPages = 0 //
-
+  // NECESITO TENER UN TOTAL PAGES ASI QUE TENGO QUE MODIFICAR EL SERVICIO PARA OBTENER ESTA INFO
   constructor(private readonly movieService: MovieConsultService) {}
 
   ngOnInit(): void {

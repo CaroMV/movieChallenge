@@ -14,12 +14,14 @@ export class MovieConsultService {
   // private readonly orderParam = ['popularity.desc', 'popularity.desc', 'popularity.asc', 'revenue.desc', 'revenue.asc', 'primary_release_date.desc', 'primary_release_date.asc', 'vote_average.desc', 'vote_average.asc', 'vote_count.desc', 'vote_count.asc'];
   constructor(private readonly http: HttpClient) {}
 
+  // MODIFIQUE EL SERVICIO PARA OBTENER LAS FILSM 
   getMovies(page: number): Observable<any> {
     const params = new HttpParams().set('api_key', this.api_key).set('page', page.toString());
     
     return this.http.get<any>(`${this.urlAPI}/discover/movie`, { params })
       .pipe(map((response: any) => {
         return { movies: response.results || [], total_pages: response.total_pages };
+        // ACÁ EN VEZ DE SOLO OBTENER RESPONSE.RESULTS, OBTENGO TOTAL_PAGES
       }));
   }
   
