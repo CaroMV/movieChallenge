@@ -1,6 +1,7 @@
 <app-header></app-header>
-<div class="movie-list">
+<app-options></app-options>
+<section class="movie-list">
   <app-card *ngFor="let movie of movies" [backdropPath]="movie.backdrop_path" [title]="movie.title" [year]="getReleaseYear(movie.release_date)">
   </app-card>
-</div>
-<app-pagination></app-pagination>
+  <app-pagination></app-pagination>
+</section>

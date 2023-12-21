@@ -20,7 +20,7 @@ export class MovieListComponent implements OnInit {
   loadMovies(): void {
     this.movieService.getMovies(1).subscribe(
       (res) => {
-        console.log('Respuesta cargada por loadMovies(): ',res); // Verifica qué está devolviendo la API
+        console.log('Respuesta cargada por loadMovies(): ',res); // Verificar qué está devolviendo la API
         this.movies = res;
       },
       (error) => {
